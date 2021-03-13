@@ -1,91 +1,75 @@
 #1
-#lista_sportow = ['piłka_nożna', 'siatkówka', 'baseball']
-#lista_sportow.reverse()
-#lista_sportow.append('koszykówka')
-#print(lista_sportow)
-
+# liczby = [1,2,3,4,5,6,7,8,9,10]
+# zbior1 = [1-x for x in liczby]
+# print(zbior1)
+#
+# zbior2 = [4**y for y in range(8)]
+# print(zbior2)
+#
+# zbior3 = [z for z in zbior2 if z % 2 == 0]
+# print(zbior3)
 #2
-#slownik = {"np": "na przykład", "m.in.": "między innymi", "pt": "pod tytułem"}
-
+# import random
+# losowe = []
+# for x in range(9):
+#     losowe.append(random.randint(1, 30))
+# print(losowe)
+# parzyste = [x for x in losowe if x % 2 == 0]
+# print(parzyste)
 #3
-#gry = {"League of Legends": "PC", "Cyberpunk2077": "PC", "The Legend Of Zelda": "NS", "Red Dead Redemption 2": "PS4"}
-#print(len(gry))
+# produkty = {"jajka": "sztuki", "mąka": "kg", "cukier": "kg", "jabłka": "sztuki"}
+# sztuki = [keys for keys, values in produkty.items() if values == "sztuki"]
+# print(produkty)
+# print(sztuki)
 
-# 4
-# zdanie = input("Napisz dowolne zdanie: ")
-# ilosc = 0
-# for a in zdanie:
-#     if a == "a":
-#         ilosc += 1
-# print(ilosc)
+#4
+# def pitagoras(a, b, c):
+#     boki = a**2 + b**2
+#     przeciw = c**2
+#     if boki == przeciw:
+#         print("Trójkąt o bokach", a, b, c, "jest prostokątny.")
+#         return 1
+#     else:
+#         print("Trójkąt o bokach", a, b, c, "nie jest prostokątny.")
+#         return 0
+# print(pitagoras(3,4,5))
+# print(pitagoras(2,4,5))
 
 #5
-# import sys as system
-# system.stdout.write("wpisz 1 liczbę całkowitą: ")
-# a = system.stdin.readline()
-# system.stdout.write("wpisz 2 liczbę całkowitą: ")
-# b = system.stdin.readline()
-# system.stdout.write("wpisz 3 liczbę całkowitą: ")
-# c = system.stdin.readline()
-# a = int(a)
-# b = int(b)
-# c = int(c)
-# wynik = a ** b + c
-# system.stdout.write(str(wynik))
+# def trapez(a=2, b=4, h=3):
+#     pole = ((a+b)*h)/2
+#     print("Pole trapezu: ")
+#     return pole
+# print(trapez())
 
 #6
-# print("Wpisz 1 liczbę całkowitą: ")
-# a = input()
-# print("Wpisz 2 liczbę całkowitą: ")
-# b = input()
-# print("Wpisz 3 liczbę całkowitą: ")
-# c = input()
-# if a>b:
-#     if c>a:
-#         print("Największa jest 3 liczba.")
-#     else:
-#         print("Największa jest 1 liczba.")
-# elif b>a:
-#     if c>b:
-#         print("Największa jest 3 liczba.")
-#     else:
-#         print("Największa jest 2 liczba.")
-# else:
-#     if a == c:
-#         print("Liczby są równe.")
-#     else:
-#         print("Największa jest 3 liczba.")
+# def ciag(a1=1, b=4, ile=10):
+#     for i in range(ile):
+#         a1 *= b
+#     return a1
+# print(ciag())
+
 #7
-# liczby = [2, 4, 5.65, 12, 5, 12.332, 6.93, 7369]
-# for kwadrat in liczby:
-#     print(kwadrat ** 2)
+# def ciag2(a1=1, b=4, ile=10):
+#     a1 = (a1*b)**ile
+#     return a1
+# print(ciag2())
+
 #8
-# i = 0
-# lista = []
-# while i < 10:
-#     print("Podaj liczbe: ")
-#     a = input()
-#     parzysta = int(a)%2
-#     if parzysta == 0:
-#         lista.append(a)
-#     i += 1
-# print(lista)
+# zakupy = {"jajka": 12, "chleb": 3, "makaron": 7}
+# def lista(a):
+#     b = 0
+#     c = 0
+#     for x in a.values():
+#         b = b + x
+#         c += 1
+#     print('Wartość zakupów to', b, "zł.\nWszyskich produktów jest: ")
+#     return c
+# print(lista(zakupy))
 
 #9
-# lista = [1, 2, 3, 4, 5]
-# for liczba in lista:
-#     a = int(liczba)%2
-#     if a == 0:
-#         print("E")
-#     else:
-#         print("EEEEEE")
-#10
-# import math
-# print("Podaj liczbę do spierwiastkowania: ")
-# a = int(input())
-# try:
-#     a = (math.sqrt(a))
-#     print(a)
-# except:
-#     print("Nie wolno pierwiastkować liczb ujemnych!!!")
+from ciagi import arytmetyczne
+from ciagi import geometryczne
+
+
 
