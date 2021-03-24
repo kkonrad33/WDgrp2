@@ -1,75 +1,113 @@
-#1
-# liczby = [1,2,3,4,5,6,7,8,9,10]
-# zbior1 = [1-x for x in liczby]
-# print(zbior1)
-#
-# zbior2 = [4**y for y in range(8)]
-# print(zbior2)
-#
-# zbior3 = [z for z in zbior2 if z % 2 == 0]
-# print(zbior3)
-#2
+# 1
 # import random
+# import sys
 # losowe = []
 # for x in range(9):
-#     losowe.append(random.randint(1, 30))
+#     losowe.append(random.randint(0, 30))
 # print(losowe)
-# parzyste = [x for x in losowe if x % 2 == 0]
-# print(parzyste)
-#3
-# produkty = {"jajka": "sztuki", "mąka": "kg", "cukier": "kg", "jabłka": "sztuki"}
-# sztuki = [keys for keys, values in produkty.items() if values == "sztuki"]
-# print(produkty)
-# print(sztuki)
+# plik = open("losy.txt", "w+")
+# for x in losowe:
+#     x *= 2
+#     plik.writelines(str(x))
+#     plik.writelines(str(" "))
+# plik.close()
 
-#4
-# def pitagoras(a, b, c):
-#     boki = a**2 + b**2
-#     przeciw = c**2
-#     if boki == przeciw:
-#         print("Trójkąt o bokach", a, b, c, "jest prostokątny.")
-#         return 1
-#     else:
-#         print("Trójkąt o bokach", a, b, c, "nie jest prostokątny.")
-#         return 0
-# print(pitagoras(3,4,5))
-# print(pitagoras(2,4,5))
+# 2
+# plik = open("losy.txt", "r")
+# liczby = plik.readline()
+# print(liczby)
 
-#5
-# def trapez(a=2, b=4, h=3):
-#     pole = ((a+b)*h)/2
-#     print("Pole trapezu: ")
-#     return pole
-# print(trapez())
+# 3
+# with open("kolory", "r+") as plik:
+#     plik.write("Borsuk jest oportunistycznym wszystkożercą, łatwo przystosowującym się do zasobów pokarmowych w okolicy siedliska - jego dieta obejmuje wiele roślin i zwierząt. ")
+#     plik.write("Dżdżownice stanowią najważniejsze źródło pożywienia borsuka; do ważnych należą także duże owady, małe i młode ssaki oraz przy nadarzającej się okazji ptaki, padlina, zboża i owoce. ")
+#     plik.write("Ssaki, na które poluje to m.in. zające, szczury, myszy, norniki, ryjówki, krety i jeże oraz przydomowe zwierzęta znajdujące się na terenie łowieckim borsuka, tj. koty, króliki.")
+#     borsuk = plik.readlines()
+#     print(borsuk)
 
-#6
-# def ciag(a1=1, b=4, ile=10):
-#     for i in range(ile):
-#         a1 *= b
-#     return a1
-# print(ciag())
+# 4
+# class NaZakupy():
+#     nazwa_produktu = ""
+#     ilosc = 0
+#     jednostka_miary = ""
+#     cena_jed = 0
+#
+#     def __init__(self, nazwa_produktu, ilosc, jednostka_miary, cena_jed):
+#         self.nazwa_produktu = nazwa_produktu
+#         self.ilosc = ilosc
+#         self.jednostka_miary = jednostka_miary
+#         self.cena_jed = cena_jed
+#
+#     def wyswietl_produkt(self):
+#         print(self.nazwa_produktu, self.ilosc, self.jednostka_miary, self.cena_jed)
+#
+#     def ile_produktu(self):
+#         print(str(self.ilosc) + "" + self.jednostka_miary)
+#     def ile_kosztuje(self):
+#         kwota = self.ilosc * self.cena_jed
+#         return kwota
 
-#7
-# def ciag2(a1=1, b=4, ile=10):
-#     a1 = (a1*b)**ile
-#     return a1
-# print(ciag2())
-
-#8
-# zakupy = {"jajka": 12, "chleb": 3, "makaron": 7}
-# def lista(a):
-#     b = 0
-#     c = 0
-#     for x in a.values():
-#         b = b + x
-#         c += 1
-#     print('Wartość zakupów to', b, "zł.\nWszyskich produktów jest: ")
-#     return c
-# print(lista(zakupy))
-
-#9
-from ciagi import arytmetyczne
-from ciagi import geometryczne
-
+# 5
+# class ciagia:
+#     pierwszy = 0
+#     roznica = 0
+#     ile = 0
+#     elementy_ciagu = []
+#
+#     def wyswietl_dane(self):
+#         print(self.elementy_ciagu)
+#     def pobierz_elementy(self):
+#         element = input("Podaj element: ")
+#         e = int(element)
+#         self.elementy_ciagu.append(e)
+#     def pobierz_parametry(self):
+#         pierwszy = input("Podaj pierwszy element: ")
+#         roznica = input("Podaj różnice: ")
+#         ile = input("Podaj ile elementów chcesz wygenerować: ")
+#         self.pierwszy = int(pierwszy)
+#         self.roznica = int(roznica)
+#         self.ile = int(ile)
+#     def policz_sume(self):
+#         suma = 0
+#         for x in self.elementy_ciagu:
+#             suma += x
+#         print(suma)
+#     def policz_elementy(self):
+#         self.elementy_ciagu.append(self.pierwszy)
+#         if self.roznica != 0:
+#             for x in range(self.ile-1):
+#                 an = self.pierwszy + self.roznica
+#                 self.elementy_ciagu.append(an)
+#                 self.pierwszy = an
+# ciag = ciagia()
+# ciag.pobierz_elementy()
+# ciag.pobierz_parametry()
+# ciag.policz_elementy()
+# ciag.wyswietl_dane()
+# 6
+# class Robaczek:
+#     def __init__(self, x=0, y=0, krok=1):
+#         self.x = x
+#         self.y = y
+#         self.krok = krok
+#
+#     def idz_w_gore(self, ile_krokow):
+#         self.y += (ile_krokow*self.krok)
+#     def idz_w_dol(self, ile_krokow):
+#         self.y -= (ile_krokow*self.krok)
+#     def idz_w_prawo(self, ile_krokow):
+#         self.x += (ile_krokow*self.krok)
+#     def idz_w_lewo(self, ile_krokow):
+#         self.x -= (ile_krokow*self.krok)
+#     def pokaz_gdzie_jestes(self):
+#         print("x: " + str(self.x) + " y: " + str(self.y))
+#
+# robal = Robaczek()
+# print(robal.pokaz_gdzie_jestes())
+# robal.idz_w_gore(5)
+# robal.idz_w_lewo(4)
+# robal.idz_w_prawo(7)
+# robal.idz_w_dol(9)
+# print(robal.pokaz_gdzie_jestes())
 
 
