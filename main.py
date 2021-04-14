@@ -83,5 +83,14 @@ import numpy as np
 # podzial(tablica, "poziomo")
 # podzial(tablica, "pionowo")
 
+# zadanie 9
+
+ciag = np.zeros((5, 5), dtype=int)
+y = 1
+for x in range(25):
+    y += 2
+    ciag[x // 5][x % 5] = y
 
 
+
+print(ciag)
