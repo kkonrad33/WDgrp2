@@ -1,96 +1,80 @@
 import numpy as np
-# zadanie 1
+# Zadanie 1
+# Utwórz dwie macierze 1x3 różnych wartości a następnie wykonaj operację mnożenia.
+# a = np.arange(3)
+# b = np.array([4,5,6])
+# c = a * b
+# print(c)
 
-# czworki = np.arange(4, 81, 4)
-# print(czworki)
-# print(czworki.size)
-# zadanie 2
+# Zadanie 2
+# Utwórz macierz 3x3 oraz 4x4 i znajdź najniższe wartości dla każdej kolumny i każdego rzędu.
+# a = np.arange(9).reshape(3,3)
+# b = np.arange(16).reshape(4,4)
+# print(a.min(axis=1))
+# print(b.min(axis=1))
+# print(a.min(axis=0))
+# print(b.min(axis=0))
 
-# list = [1.2, 3.5, 6.1, 2.3]
-# print(list)
-# konwert = np.array(list, dtype='int64')
-# print(konwert)
-# print(konwert.dtype)
+# Zadanie 3
+# Wykorzystaj macierze z zadania pierwszego i wykonaj iloczyn macierzy.
+# a = np.arange(3)
+# b = np.array([4,5,6])
+# print(np.dot(a,b))
 
-# zadanie 3
+# Zadanie 4
+# Utwórz dwie macierze 1x3 gdzie pierwsza z nich będzie zawierała liczby całkowite, a druga liczby rzeczywiste. Następnie wykonaj na nich operację mnożenia.
+# a = np.arange(3, dtype='int32')
+# b = np.linspace(2,7,3)
+# c = a * b
+# print(c)
+# print(c.dtype)
 
+# Zadanie 5
+# Utwórz macierz 2x3 różnych wartości a następnie wylicz sinus dla każdej z jej wartości i zapisz do zmiennej “a”.
+# a = np.array([[4,5,2],[6,1,3]])
+# b = np.cos(a)
 
-# def tablica(n):
-#
-#     tab = np.arange(1, n*n, 1)
-#     print(tab)
-#
-#
-# tablica(2)
+# Zadanie 6
+# Utwórz nową macierz 2x3 różnych wartości a następnie wylicz cosinus dla każdej z jej wartości i zapisz do zmiennej “b”.
+# b = np.array([[8,12,3],[1,4,22]])
+# b = np.cos(b)
+# Zadanie 7
+# Wykonaj funkcję dodawania obu macierzy zapisanych wcześniej do zmiennych a i b.
+# print(np.add(a,b))
 
-# zadanie 4
+# Zadanie 8
+# Wygeneruj macierz 3x3 i wyświetl w pętli każdy z rzędów.
 
-# def potegi(n, m):
-#
-#     pow = np.logspace(n, n**m, m)
-#     print(pow)
-#
-#
-# potegi(2, 4)
+# a = np.arange(9).reshape(3,3)
+# for x in a:
+#     print(x)
+#     print("")
 
-# zadanie 5
+# Zadanie 9
+# Wygeneruj macierz 3x3 i wyświetl w pętli każdy element korzystając z opcji “spłaszczenia” macierzy. (użyj funkcji flat())
+# a = np.arange(9).reshape(3,3)
+# for x in a.flat:
+#     print(x)
+#     print("")
 
-# def wektor(leng):
-#     wek = []
-#     for x in range(leng):
-#         wek.append(leng-x)
-#     tab = np.diag([a for a in wek])
-#     print(tab)
-#
-#
-# wektor(5)
-# wektor(10)
+# Zadanie 10
+# Wygeneruj macierz 9x9 a następnie zmień jej kształt. Jakie mamy możliwości i dlaczego?
+# a = np.arange(81).reshape(9,9)
+# b = a.reshape(1,81)
+# print(b)
+"""możemy zmienić kształt tylko na 81x1 i 1x81, ponieważ jedynie te liczby tworzą macierz 
+z ilością elementów równym macierzy 9x9"""
 
-# zadanie 6
-
-# slowo1 = 'dziobak'
-# slowo2 = 'kot'
-# slowo3 = 'krewetka'
-#
-# wykreslanka = np.array(list(slowo1))
-# print(wykreslanka)
-
-# zadanie 7
-
-# zadanie 8
-
-# def podzial(tab, kierunek):
-#     rzedy, kolumny = tab.shape
-#     if kierunek == "poziomo":
-#         if kolumny % 2 == 0:
-#             kolumny /= 2
-#             kolumny = int(kolumny)
-#             print(tab[:kolumny])
-#             print(tab[kolumny:])
-#         else:
-#             print("liczba kolumn nie jest parzysta")
-#
-#     if kierunek == "pionowo":
-#         if rzedy % 2 == 0:
-#             rzedy /= 2
-#             rzedy = int(rzedy)
-#             print(tab[:, :rzedy])
-#             print(tab[:, rzedy:])
-#         else:
-#             print("liczba rzędy nie jest parzysta")
-#
-# tablica = np.diag([a for a in range(6)])
-# podzial(tablica, "poziomo")
-# podzial(tablica, "pionowo")
-
-# zadanie 9
-
-ciag = np.zeros((5, 5), dtype=int)
-y = 1
-for x in range(25):
-    y += 2
-    ciag[x // 5][x % 5] = y
-
-
-
-print(ciag)
+# Zadanie 11
+# Wygeneruj macierz płaską (wektor) i przekształć ją na macierz 3x4. Wygeneruj w ten sposób jeszcze kombinacje 4x3 i 2x6. Spłaszcz każdą z nich i wyświetl wyniki. Czy są identyczne?
+# a = np.arange(12)
+# b = a.reshape(3,4)
+# c = a.reshape(4,3)
+# d = a.reshape(2,6)
+# b = b.flatten()
+# c = c.flatten()
+# d = d.flatten()
+# print(b)
+# print(c)
+# print(d)
+"""spłaszczone macierze są identyczne"""
